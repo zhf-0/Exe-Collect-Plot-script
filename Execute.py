@@ -20,8 +20,10 @@ class Running:
     def __init__(self,e_path,size,TemplateInput,keys,vals):
         log_name = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
         log_path = os.path.join(os.getcwd(),'log',log_name)
+        count = 1
         while os.path.exists(log_path):
-            log_path = log_path+'_'+str(random.randint(1,100)) 
+            log_path = log_path+'_'+str(count) 
+            count = count + 1
         os.makedirs(log_path)
         
         self.log_path = log_path
