@@ -21,8 +21,9 @@ class Running:
         log_name = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
         log_path = os.path.join(os.getcwd(),'log',log_name)
         count = 1
+        base_log_path = log_path
         while os.path.exists(log_path):
-            log_path = log_path+'_'+str(count) 
+            log_path = base_log_path+'_'+str(count) 
             count = count + 1
         os.makedirs(log_path)
         
